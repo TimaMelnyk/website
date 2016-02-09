@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 import datetime
-from django.utils import timezone
+# from django.utils import timezone
 from django.contrib.auth.models import User
 # Create your models here.
 
@@ -18,5 +18,5 @@ class Order(models.Model):
     prof = models.ForeignKey(UserProfile)
     def __str__(self):
         return self.order_text
-    def was_published_recently(self):
-        return self.pub_date>=timezone.now() - datetime.timedelta(days=1)
+    # def was_published_recently(self):
+    #     return self.pub_date>=timezone.now() - datetime.timedelta(days=1)
