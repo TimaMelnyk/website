@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block order %}
+ 
+        <!--<input type="button" class="button" onclick="window.location='/auth/logout/';" value="Выйти">-->
+<div class="hero-form">
+          <form action="/auth/order/" class="default-form" method="post">
+            {% csrf_token %}
+            <h3 class="form-title">Заказывай сейчас!</h3>
+            <div class="field">
+                {% if username %}
+                {{ order_form.as_p }}
+                {% else %}
+                <p>lol</p>
+                {% endif %}
+            </div>
+            <div class="field">
+              <button class="btn btn-red">Заказать</button>
+            </div>
+            <span class="declaration">Зарегистрированные пользователи будут получать бонусы</span>
+          </form>
+        </div>
+{% endblock %}

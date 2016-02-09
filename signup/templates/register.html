@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+{% block register %}
+<div class="hero-form">
+    {% if username %}
+    <p>Вы зарегистрированы</p>
+    {% else %}
+          <form action="/auth/register/" class="default-form" method="post">
+            {% csrf_token %}
+            
+            <div class="register">
+            <div class="field">
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+            </div>
+            </div>
+            <div class="field">
+              <button class="btn btn-red">Регистрация</button>
+            </div>
+            <span class="declaration">Зарегистрированные пользователи будут получать бонусы</span>
+          </form>
+          {% endif %}
+        </div>
+ {% endblock %}

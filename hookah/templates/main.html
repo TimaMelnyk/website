@@ -1,0 +1,80 @@
+{% extends 'index.html'%}
+{% load staticfiles %}
+{% block main %}
+<!--{% if username %}
+<h1>Rango says... hello {{ username }}!</h1>
+{% else %}
+<h1>Rango says... hello world!</h1>
+{% endif %}-->
+
+
+<!-- price-->
+<section id="pricing">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 preamble">
+        <h3>Наши кальчики или табаки</h3>
+        <p class="lead">чет добавим</p>
+      </div>
+      <div class="col-md-4 pricing">
+        <div class="pricing-column">
+          <div class="pricing-header">
+            <h2 class="price">ЦЕНА</h2>
+            <h4 class="type">супер кел от горошка</h4>
+          </div>
+          <ul class="pricing-features custom-list">
+            <li><span>особенности</span></li>
+            <li><span>этого</span></li>
+            <li><span>кальчик</span></li>
+          </ul>
+          <a href="/auth/order/" class="btn btn-order btn-red">Заказать</a>
+        </div>
+      </div>
+      <div class="col-md-4 pricing">
+        <div class="pricing-column">
+          <div class="pricing-header">
+            <h2 class="price">Цена</h2>
+            <h4 class="type">кальчик от вовы</h4>
+          </div>
+          <ul class="pricing-features custom-list">
+            <li><span>Описание</span></li>
+            <li><span>такая то чаша</span></li>
+            <li><span>с такими табаками</span></li>
+          </ul>
+          <a href="/auth/order/" class="btn btn-order btn-red">Заказать</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--ABOUT-->
+
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 preamble">
+        <h3>Калянчики</h3>
+        <p class="lead">ну судите их строго</p>
+      </div>
+      <div class="col-md-4 person">
+        <img src="{% static "img/Vova.jpg" %}" alt="Vova" class="img-responsive">
+        <h4>Вовчик Наркоман</h4>
+        <!--<p class="position">Школьник</p>-->
+        <!--<p>Курит с 5 класса</p>-->
+      </div>
+      <div class="col-md-4 person">
+        <img src="{% static "img/gara.jpg" %}" alt="Gara" class="img-responsive">
+        <h4>Горошек</h4>
+        <p class="position">Студент</p>
+        <p>табаки вечно подгарают</p>
+      </div>
+      <div class="col-md-4 person">
+        <img src="{% static "img/Gorya.jpg" %}" alt="Gorya" class="img-responsive">
+        <h4>Илюха</h4>
+        <!--<p class="position">Ребенок</p>-->
+        <!--<p>накуриваю кентов в садике</p>-->
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

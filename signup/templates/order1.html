@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block order1 %}
+ 
+        <!--<input type="button" class="button" onclick="window.location='/auth/logout/';" value="Выйти">-->
+<div class="hero-form">
+          <form action="/auth/order1/" class="default-form" method="post">
+            {% csrf_token %}
+            <h3 class="form-title">Заказывай сейчас!</h3>
+            <div class="field">
+            <label for="text">Ваш заказ</label>
+            <input type="text" name="text" placeholder="заказ" >
+            <label for="phone"></label>
+            <input type="tel" name="phone" placeholder="Номер" >
+            <!--<label for="date"></label>
+            <input type="date" name="date" placeholder="Дата">-->
+            </div>
+            <div class="field">
+              <button class="btn btn-red">Заказать</button>
+            </div>
+            <span class="declaration">Зарегистрированные пользователи будут получать бонусы</span>
+          </form>
+        </div>
+{% endblock %}

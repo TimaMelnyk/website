@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% block login %}
+ 
+  
+        <!--<input type="button" class="button" onclick="window.location='/auth/logout/';" value="Выйти">-->
+<div class="login">
+<div class="hero-form">
+          {% if username %}
+          <p>Вы авторизированы</p>
+          {% else %}
+          <div class="errorlist">
+          {% if error %}
+          <p>{{ error }}</p>
+          {% endif %}
+          </div>
+          <form action="/auth/login/" class="default-form" method="post">
+            {% csrf_token %}
+            <h3 class="form-title">Заказывай сейчас!</h3>
+            <div class="field">
+            <label for="username">Логин</label>
+            <input type="text" name="username" placeholder="login" >
+            <label for="password">Пароль</label>
+            <input type="password" name="password" placeholder="password" >
+            </div>
+            <div class="field">
+              <button class="btn btn-red">Авторизация</button>
+            </div>
+            <span class="declaration">Зарегистрированные пользователи будут получать бонусы</span>
+          </form>
+          {% endif %}
+        </div>
+</div>
+{% endblock %}

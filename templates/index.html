@@ -1,0 +1,76 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hookah</title>
+        <meta http-equiv=Content-Type content="text/html;charset=UTF-8">
+            <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+            
+            
+  
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+<!--     HEAD   -->
+ <header id="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="logo">
+          <a href="/"><b alt="logo" class="img-responsive">HOOKAH</b></a>
+          <span class="phone"><i class="fa fa-phone"></i>093-940-51-40</span>
+        </div>
+        <div class="navigation">
+          <nav>
+            <ul class="custom-list list-inline">
+              <li><a href="/#hero">На главную</a></li>
+              <li><a href="/#about">Про нас</a></li>
+              <li><a href="/#pricing">Цены</a></li>
+              {% if username %}
+               <li><a href="/auth/order/">Заказать</a></li>
+              <li>Здравствуйте, <b>{{ username }}</b> <a href=/auth/logout/ class="btn btn-red">Выйти</a></li>
+              {% else %}
+              <li><a href="/auth/order1/">Заказать</a></li>
+              <li><a href="/auth/register/" class="btn btn-red">Регистрация</a></li>
+              <li><a href="/auth/login/" class="btn btn-red">Авторизация</a></li>
+              {% endif %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- MAIN-->
+<section id="hero">
+  <div id="gradient"></div>
+  <div class="container">
+    <div class="row">
+      <div class="hero-text">
+        <div class="col-md-6">
+          <h3 class="title">Тут наше супер название</h3>
+          <p class="lead">
+          Если газеты начнут писать о том, что надо бросить курить, я лучше брошу читать!У. Черчилль
+          </p>
+          <ul class="features-list custom-list">
+            <li><i class="fa fa-check"></i><span>Акции</span></li>
+            <li><i class="fa fa-check"></i><span>супер кел</span></li>
+            <li><i class="fa fa-check"></i><span>курильщики</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-5 col-md-offset-1">
+                {% block register %}{% endblock %}
+                {% block login %}{% endblock %}
+                {% if username %}
+                {% block order %}{% endblock %}
+                {% endif %}
+                {% block order1 %}{% endblock %}
+      </div>
+    </div>
+  </div>
+</section>
+        {% block main %}{% endblock %}
+    </body>
+</html>
