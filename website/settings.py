@@ -25,7 +25,7 @@ SECRET_KEY = 'as!n*#tbpd%mi*@fc#!b@l37lglms7e73nh!9gnumfb=w99@r)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['djangotest.pythonanywhere.com']
+ALLOWED_HOSTS = ['Tima.pythonanywhere.com']
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "timofeimelnyk@gmail.com"
