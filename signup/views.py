@@ -65,6 +65,8 @@ def order(request):
         if order_form.is_valid():
             user = order_form.save()
             user.save()
+            subject = form.order_text
+            send_mail('HookahOrder', subject, settings.EMAIL_HOST_USER, ['timofeimelnyk@gmail.com'])
         else:
             print order_form.errors
     else:
